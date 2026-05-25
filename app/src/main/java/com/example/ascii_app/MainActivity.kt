@@ -6,8 +6,25 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.collections.plusAssign
+import kotlin.inc
 
 class MainActivity : AppCompatActivity() {
+    fun pattern(): String {
+
+        // Added loop counter
+        var counter = 1
+        var artPattern = ""
+        //Added while loop for art pattern
+        while (counter <= 7) {
+            artPattern += "* \n"
+            counter++
+        }
+        return pattern()
+    }
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -15,12 +32,9 @@ class MainActivity : AppCompatActivity() {
         //Added variable to text view
         val textView = findViewById<TextView>(R.id.artTxt)
 
-        // Added loop counter
-        val counter = 1
-        var artPattern = ""
-        while (counter <=7) {
-            artPattern += "*" \n
-        }
+        textView.text= pattern()
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
