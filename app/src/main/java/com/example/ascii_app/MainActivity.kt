@@ -17,7 +17,17 @@ class MainActivity : AppCompatActivity() {
         var artPattern = ""
         //Added while loop for art pattern
         while (counter <= 7) {
-            artPattern += "* \n"
+            //Variable to control the stars in each row
+            var stars= 1
+            //Inner loop to control the stars in each arrow
+            while (stars<= counter) {
+            //increment the star per row
+            artPattern += "*"
+            stars++
+        }
+            //Move to the next line
+            artPattern += "\n"
+            //Increment counter per row
             counter++
         }
         return pattern()
