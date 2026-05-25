@@ -12,7 +12,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        //Added variable to text view
         val textView = findViewById<TextView>(R.id.artTxt)
+
+        // Added loop counter
+        val counter = 1
+        var artPattern = ""
+        while (counter <=7) {
+            artPattern += "*" \n
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
